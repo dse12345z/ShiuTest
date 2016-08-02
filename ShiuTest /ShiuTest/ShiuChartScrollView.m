@@ -125,11 +125,9 @@
     NSLog(@"width = %f", width);
     
     if (distanceFromRight == width) {
-
         NSLog(@"end of table");
-
     }
-    else {
+    else if ((distanceFromRight - width) >= DashLineWidth) {
         self.displacementAmount += DashLineWidth;
         CGPoint position = CGPointMake(self.displacementAmount, 0);
         [self.scrollView setContentOffset:position animated:YES];
